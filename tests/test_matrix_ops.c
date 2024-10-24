@@ -51,7 +51,8 @@ void test_matmul_square_matrices(void)
     expected[1][1] = 8.0f;
 
     // Run function under test
-    float **C = matmul(A, B, 2, 2, 2, 2);
+    // float **C = matmul(A, B, 2, 2, 2, 2);
+    float **C = matmul_blocking(A, B, 2, 2, 2, 2);
 
     // Check expectations
     assert_float_array_equal_matmul(expected, C, 2, 2);
@@ -86,7 +87,8 @@ void test_matmul_incompatible_dimensions(void)
     }
 
     // Run function under test
-    float **C = matmul(A, B, 2, 3, 2, 2);
+    // float **C = matmul(A, B, 2, 3, 2, 2);
+    float **C = matmul_blocking(A, B, 2, 3, 2, 2);
 
     // Check expectations
     UNITY_TEST_ASSERT_NULL(C, __LINE__, "Expected NULL!");
@@ -124,7 +126,8 @@ void test_matmul_minimal(void)
     }
     expected[0][0] = 2.0f;
 
-    float **C = matmul(A, B, 1, 1, 1, 1);
+    // float **C = matmul(A, B, 1, 1, 1, 1);
+    float **C = matmul_blocking(A, B, 1, 1, 1, 1);
 
     assert_float_array_equal_matmul(expected, C, 1, 1);
 
@@ -188,7 +191,8 @@ void test_matmul_with_zeros(void)
     expected[2][1] = 3.0f;
     expected[2][2] = 0.0f;
 
-    float **C = matmul(A, B, 3, 3, 3, 3);
+    // float **C = matmul(A, B, 3, 3, 3, 3);
+    float **C = matmul_blocking(A, B, 3, 3, 3, 3);
     assert_float_array_equal_matmul(expected, C, 3, 3);
 
     for (int i = 0; i < 3; i++)
@@ -236,7 +240,8 @@ void test_matmul_with_negatives(void)
     expected[1][0] = 43.0f;
     expected[1][1] = -50.0f;
 
-    float **C = matmul(A, B, 2, 2, 2, 2);
+    // float **C = matmul(A, B, 2, 2, 2, 2);
+    float **C = matmul_blocking(A, B, 2, 2, 2, 2);
     assert_float_array_equal_matmul(expected, C, 2, 2);
 
     // Cleanup
@@ -271,7 +276,8 @@ void profile_matmul(int size)
     // Profiling: run the function multiple times to minimize setup/cleanup impact
     for (int r = 0; r < REP; r++)
     {
-        float **result = matmul(A, B, size, size, size, size);
+        // float **result = matmul(A, B, size, size, size, size);
+        float **result = matmul_blocking(A, B, size, size, size, size);
 
         for (int i = 0; i < size; i++)
         {
