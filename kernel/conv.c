@@ -3,18 +3,6 @@
 #include "matrix_ops.h"
 #include <stdio.h>
 
-// void print2DFloatArray(float **array, int rows, int cols)
-// {
-//     for (int i = 0; i < rows; i++)
-//     {
-//         for (int j = 0; j < cols; j++)
-//         {
-//             printf("%d ", (int)array[i][j]); // Print each float with a space
-//         }
-//         printf("\n"); // Move to the next line after printing a row
-//     }
-// }
-
 // Basic convolution operation
 float ***convolution(float ***image, int numChannels, float ****kernel, float *biasData, int numFilters, int inputSize, int kernelSize)
 {

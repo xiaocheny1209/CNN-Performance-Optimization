@@ -1,6 +1,5 @@
 #include "unity/unity.h"
 #include "../kernel/kernel.h"
-// #include "../kernel/attention.h"
 #include "../utils/data_utils.h"
 #include "test_attention.h"
 

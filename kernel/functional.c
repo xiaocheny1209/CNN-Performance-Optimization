@@ -39,7 +39,8 @@ float *softmax(float *input, int inputSize)
     // Normalise and apply log
     for (int i = 0; i < inputSize; i++)
     {
-        output[i] = log(output[i] / sumExp); // log softmax
+        // output[i] = log(output[i] / sumExp); // log softmax
+        output[i] = output[i] / sumExp;
     }
 
     return output;

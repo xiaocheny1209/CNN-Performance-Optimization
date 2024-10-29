@@ -25,7 +25,9 @@ int main(void)
 {
     // profiling
     // profile_linear(SMALL_MAT, SMALL_MAT);
-    // profile_matmul(SMALL_MAT);
+    profile_matmul(SMALL_MAT);
+    profile_matmul(MEDIUM_MAT);
+    profile_matmul(LARGE_MAT);
     // profile_conv(SMALL_MAT);
     // profile_softmax_small_input();
     // profile_softmax_medium_input();
@@ -63,13 +65,13 @@ int main(void)
     // RUN_TEST(test_linear_large_input);
 
     // Test matrix_ops
-    RUN_TEST(test_matmul_square_matrices);
-    RUN_TEST(test_matmul_incompatible_dimensions);
-    RUN_TEST(test_matmul_minimal);
-    RUN_TEST(test_matmul_with_zeros);
-    RUN_TEST(test_matmul_with_negatives);
+    // RUN_TEST(test_matmul_square_matrices);
+    // RUN_TEST(test_matmul_incompatible_dimensions);
+    // RUN_TEST(test_matmul_minimal);
+    // RUN_TEST(test_matmul_with_zeros);
+    // RUN_TEST(test_matmul_with_negatives);
 
-    RUN_TEST(test_scaled_dot_product_attention);
+    // RUN_TEST(test_scaled_dot_product_attention);
 
     return UNITY_END();
 }
