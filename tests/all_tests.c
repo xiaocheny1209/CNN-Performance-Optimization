@@ -38,7 +38,7 @@ int main(void)
 
     // tests
 
-    UNITY_BEGIN();
+    // UNITY_BEGIN();
 
     // Test conv
     // RUN_TEST(test_conv);
@@ -65,13 +65,13 @@ int main(void)
     // RUN_TEST(test_linear_large_input);
 
     // Test matrix_ops
-    // RUN_TEST(test_matmul_square_matrices);
-    // RUN_TEST(test_matmul_incompatible_dimensions);
-    // RUN_TEST(test_matmul_minimal);
-    // RUN_TEST(test_matmul_with_zeros);
-    // RUN_TEST(test_matmul_with_negatives);
+    RUN_TEST(test_matmul_square_matrices);
+    RUN_TEST(test_matmul_incompatible_dimensions);
+    RUN_TEST(test_matmul_minimal);
+    RUN_TEST(test_matmul_with_zeros);
+    RUN_TEST(test_matmul_with_negatives);
 
-    // RUN_TEST(test_scaled_dot_product_attention);
+    RUN_TEST(test_scaled_dot_product_attention);
 
-    return UNITY_END();
+    // return UNITY_END();
 }
