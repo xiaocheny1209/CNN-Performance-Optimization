@@ -12,4 +12,4 @@ This repository contains optimized implementations of core components in deep le
 - Top-down Profiling with PMU: Uses the Performance Monitoring Unit (PMU) for top-down analysis, enabling identification of bottlenecks and fine-tuning of resource utilization.
 
 # Performance
-The reports/ directory contains reports for performance data across various input sizes. Performance profiling with the PMU tool includes a top-down analysis of bottlenecks and efficiency, enabling continuous optimization of computational and memory performance.
+The `reports/` directory contains reports for performance data across various input sizes. Performance profiling with the PMU tool includes a top-down analysis of bottlenecks and efficiency, enabling continuous optimization of computational and memory performance.
