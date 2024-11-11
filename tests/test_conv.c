@@ -165,7 +165,9 @@ void test_conv(void)
     }
 
     // Run function under test
-    float ***convOutput = convolution(image, numChannels, kernel, biasData, 1, 5, 3);
+    // float ***convOutput = convolution(image, numChannels, kernel, biasData, 1, 5, 3);
+    float ***convOutput = convolution_im2col(image, numChannels, kernel, biasData, 1, 5, 3, MATMUL_SPARSE);
+    // printf("final output ready for testing\n");
 
     // Check expectations
     assert_float_array_equal_conv(expected, convOutput, 1, 3, 3);
