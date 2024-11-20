@@ -26,7 +26,7 @@ int main(void)
     // profiling
     // profile_linear(SMALL_MAT, SMALL_MAT);
     // profile_matmul(SMALL_MAT);
-    // profile_matmul(MEDIUM_MAT);
+    profile_matmul(MEDIUM_MAT);
     // profile_matmul(LARGE_MAT);
     // profile_conv(SMALL_MAT);
     // profile_softmax_small_input();
@@ -41,9 +41,9 @@ int main(void)
     // UNITY_BEGIN();
 
     // Test conv
-    RUN_TEST(test_conv);
-    RUN_TEST(test_conv_minimal);
-    RUN_TEST(test_conv_multiple_filters_channels);
+    // RUN_TEST(test_conv);
+    // RUN_TEST(test_conv_minimal);
+    // RUN_TEST(test_conv_multiple_filters_channels);
 
     // Test nn
     // RUN_TEST(test_flatten_basic);

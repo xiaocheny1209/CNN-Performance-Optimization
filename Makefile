@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -I. -lm
+CFLAGS = -I. -lm -lpthread
 
 HDF5_FLAGS = -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial -lhdf5
 COMMON_HDRS = ./utils/data_utils.h ./kernel/conv.h ./kernel/matrix_ops.h ./kernel/linear.h ./kernel/functional.h ./kernel/nn.h ./kernel/attention.h
@@ -10,17 +10,23 @@ UNITY_FILES = ./tests/unity/unity.c
 TEST_FILES = $(wildcard ./tests/*.c)
 TEST_EXECUTABLES = $(patsubst %.c,%,$(TEST_FILES))
 
-# Performance
-MATMUL_TARGETS = matmul_naive matmul_blocking
+# Grading
+# UNITY_FILES = ./grading/unity/unity.c
+# GRADING_FILES = $(wildcard ./grading/*.c)
+# GRADING_EXECUTABLES = $(patsubst %.c,%,$(GRADING_FILES)) grading/grading_tests
+# GRADING_TESTS_OUTPUT = grading.txt
 
-BINS = lab2
+# Performance
+MATMUL_TARGETS = matmul_naive matmul_thread
+
+BINS = lab4
 
 .PHONY: all
 all: $(BINS)
 
-.PHONY: lab2
-lab2: lab2.c $(COMMON_HDRS)
-	$(CC) -o $@ lab2.c $(COMMON_SRC) $(CFLAGS) $(HDF5_FLAGS)
+.PHONY: lab4
+lab4: lab4.c $(COMMON_HDRS)
+	$(CC) -o $@ lab4.c $(COMMON_SRC) $(CFLAGS) $(HDF5_FLAGS)
 
 .PHONY: test
 test: all_tests
